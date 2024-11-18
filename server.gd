@@ -61,6 +61,7 @@ func spawn_player(id, local = false):
 	player_instance.id = id
 	player_instance.name = "player_" + str(id)
 	player_instance.is_local = local
+	player_instance.get_node("Label").text = str(player_instance.id)
 	if local == true:
 		player_instance.modulate = Color.RED
 		player_instance.global_position.x = socket_data["pos"].x;
@@ -81,6 +82,16 @@ func send_position():
 		}
 	}
 	socket.send_text(JSON.stringify(data))
+	
+func send_name():
+	var data = {
+		"type": "nome",
+		"body": {
+			"name": LineEdit.text  
+		}
+	}
+	socket.send_text(JSON.stringify(data))
+	
 
 func _on_data_received(_data):
 	var message = _data.get_string_from_utf8()
