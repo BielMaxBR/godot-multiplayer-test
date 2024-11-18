@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://be8ev88ya430m"]
+
+[ext_resource type="Script" path="res://aquario.gd" id="1_ptg43"]
+[ext_resource type="Texture2D" uid="uid://b3ka51cc8ybc8" path="res://Fundo_aquario.png" id="1_xp0gm"]
+
+[node name="aquario" type="Node2D"]
+script = ExtResource("1_ptg43")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="FundoAquario" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("1_xp0gm")
+centered = false

@@ -30,7 +30,7 @@ wss.on('connection', (ws) => {
 
 
 	ws.on('close', () => {
-		console.log('Um cliente desconectou.');
+		console.log('Um cliente desconectou: ', ws.id);
 		const message = {
 			type: "disconnected",
 			body: {

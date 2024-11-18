@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://ddit07j1t1w1n"]
 
-[ext_resource type="Texture2D" uid="uid://b5ffx6b2ffcm4" path="res://Fundo.png" id="1_jbsiv"]
+[ext_resource type="Texture2D" uid="uid://b1b1e0qqk762d" path="res://Fundo.png" id="1_jbsiv"]
 [ext_resource type="Script" path="res://menu.gd" id="1_ulqmg"]
-[ext_resource type="FontFile" uid="uid://smqqtutr3lkr" path="res://Super Shiny.ttf" id="2_mg8ql"]
+[ext_resource type="FontFile" uid="uid://nk2de4dx0swx" path="res://Super Shiny.ttf" id="2_mg8ql"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_da0qg"]
 texture = ExtResource("1_jbsiv")
