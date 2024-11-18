@@ -12,18 +12,21 @@ var json := JSON.new()
 
 var player_scene = preload("res://player.tscn")
 
-func _ready():
+func connect_server():
 	# Conecta ao servidor WebSocket
-	await get_tree().create_timer(randi_range(0,5)).timeout
+	#await get_tree().create_timer(randi_range(0,5)).timeout
 	var err = socket.connect_to_url("ws://localhost:8080")
 	if err != OK:
 		print("Erro ao conectar ao servidor WebSocket: ", err)
 	else:
 		print("Tentando conectar ao servidor WebSocket...")
 
+
+var state : int = WebSocketPeer.STATE_CLOSED;
+
 func _process(_delta):
 	socket.poll()
-	var state = socket.get_ready_state()
+	state = socket.get_ready_state() 
 	if state == WebSocketPeer.STATE_OPEN:
 		if not connected:
 			connected = true
@@ -58,10 +61,11 @@ func spawn_player(id, local = false):
 	player_instance.id = id
 	player_instance.name = "player_" + str(id)
 	player_instance.is_local = local
-	if local:
+	if local == true:
 		player_instance.modulate = Color.RED
-		player_instance.global_position.x = socket_data["pos"].x
-		player_instance.global_position.y = socket_data["pos"].y
+		player_instance.global_position.x = socket_data["pos"].x;
+		player_instance.global_position.y = socket_data["pos"].y;
+		player_instance.z_index = 0;
 		local_player = player_instance
 	add_child(player_instance)
 	pass

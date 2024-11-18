@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbqsqyace0x66"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ptr5c"]
-[ext_resource type="Texture2D" uid="uid://ddb4oetv78y4y" path="res://icon.svg" id="2_n1o8p"]
+[ext_resource type="Texture2D" uid="uid://bkndv2snfy7k" path="res://crab.png" id="2_ysrlx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x7te7"]
 radius = 65.0692
@@ -10,7 +10,7 @@ radius = 65.0692
 script = ExtResource("1_ptr5c")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_n1o8p")
+texture = ExtResource("2_ysrlx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x7te7")
