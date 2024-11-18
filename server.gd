@@ -101,6 +101,7 @@ func _on_data_received(_data):
 					player.global_position.x = client.pos.x
 					player.global_position.y = client.pos.y
 					pass
+				get_tree().change_scene_to_file("res://aquario.tscn")
 			"move":
 				var player_id = body.id
 				var player_name = "player_" + str(player_id)
