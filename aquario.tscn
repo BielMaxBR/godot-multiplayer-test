@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://be8ev88ya430m"]
+[gd_scene load_steps=3 format=3 uid="uid://cqlhphp2th1je"]
 
 [ext_resource type="Script" path="res://aquario.gd" id="1_ptg43"]
 [ext_resource type="Texture2D" uid="uid://b3ka51cc8ybc8" path="res://Fundo_aquario.png" id="1_xp0gm"]
 
 [node name="aquario" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_ptg43")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
