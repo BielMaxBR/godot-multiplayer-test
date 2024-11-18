@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddit07j1t1w1n"]
+
+[ext_resource type="Texture2D" uid="uid://b5ffx6b2ffcm4" path="res://Fundo.png" id="1_jbsiv"]
+[ext_resource type="Script" path="res://menu.gd" id="1_ulqmg"]
+[ext_resource type="FontFile" uid="uid://smqqtutr3lkr" path="res://Super Shiny.ttf" id="2_mg8ql"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_da0qg"]
+texture = ExtResource("1_jbsiv")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4q7yl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fy243"]
+bg_color = Color(1.44392e-06, 0.482469, 0.24514, 1)
+corner_radius_top_left = 55
+corner_radius_top_right = 55
+corner_radius_bottom_right = 55
+corner_radius_bottom_left = 55
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alhxj"]
+bg_color = Color(9.74648e-07, 0.311404, 0.149612, 1)
+corner_radius_top_left = 55
+corner_radius_top_right = 55
+corner_radius_bottom_right = 55
+corner_radius_bottom_left = 55
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qy4dr"]
+bg_color = Color(4.95747e-06, 0.717617, 0.375078, 1)
+corner_radius_top_left = 55
+corner_radius_top_right = 55
+corner_radius_bottom_right = 55
+corner_radius_bottom_left = 55
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q2w5"]
+bg_color = Color(0, 0.482353, 0.247059, 1)
+corner_radius_top_left = 55
+corner_radius_top_right = 55
+corner_radius_bottom_right = 55
+corner_radius_bottom_left = 55
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ulqmg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_da0qg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.5
+offset_top = -65.0
+offset_right = 107.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.00889514, 0.396621, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4q7yl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fy243")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alhxj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qy4dr")
+text = "Host Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.00784314, 0.396078, 1, 1)
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4q7yl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6q2w5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alhxj")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qy4dr")
+text = "Join Game"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -232.0
+offset_top = -132.0
+offset_right = 231.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(0, 0.472173, 0.999416, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_mg8ql")
+theme_override_font_sizes/font_size = 52
+text = "Multiplayer Aquarium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_join_pressed"]
